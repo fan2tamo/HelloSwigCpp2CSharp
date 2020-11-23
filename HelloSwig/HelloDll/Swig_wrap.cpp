@@ -299,80 +299,52 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_HelloDll(SWIG_CSharpStrin
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, msg, ""); return nullreturn; } else
 
 
-#include "StringMgr.h"
+#include "Classifier.h"
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT int SWIGSTDCALL CSharp_StringMgr_GetNum(void * jarg1) {
-  int jresult ;
-  StringMgr *arg1 = (StringMgr *) 0 ;
-  int result;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Classifier_Train(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  Classifier *arg1 = (Classifier *) 0 ;
+  int arg2 ;
+  bool result;
   
-  arg1 = (StringMgr *)jarg1; 
-  result = (int)(arg1)->GetNum();
+  arg1 = (Classifier *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = (bool)(arg1)->Train(arg2);
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_StringMgr_GetString(void * jarg1, int jarg2) {
-  char * jresult ;
-  StringMgr *arg1 = (StringMgr *) 0 ;
-  int arg2 ;
-  char *result = 0 ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Classifier_Fit(void * jarg1) {
+  unsigned int jresult ;
+  Classifier *arg1 = (Classifier *) 0 ;
+  bool result;
   
-  arg1 = (StringMgr *)jarg1; 
-  arg2 = (int)jarg2; 
-  result = (char *)(arg1)->GetString(arg2);
-  jresult = SWIG_csharp_string_callback((const char *)result); 
+  arg1 = (Classifier *)jarg1; 
+  result = (bool)(arg1)->Fit();
+  jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringMgr_SetString(void * jarg1, char * jarg2) {
-  StringMgr *arg1 = (StringMgr *) 0 ;
-  char *arg2 = (char *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_Classifier(void * jarg1) {
+  Classifier *arg1 = (Classifier *) 0 ;
   
-  arg1 = (StringMgr *)jarg1; 
-  arg2 = (char *)jarg2; 
-  (arg1)->SetString((char const *)arg2);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_StringMgr_DisplayALL(void * jarg1) {
-  StringMgr *arg1 = (StringMgr *) 0 ;
-  
-  arg1 = (StringMgr *)jarg1; 
-  (arg1)->DisplayALL();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_StringMgr_Display(void * jarg1, int jarg2) {
-  StringMgr *arg1 = (StringMgr *) 0 ;
-  int arg2 ;
-  
-  arg1 = (StringMgr *)jarg1; 
-  arg2 = (int)jarg2; 
-  (arg1)->Display(arg2);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_StringMgr(void * jarg1) {
-  StringMgr *arg1 = (StringMgr *) 0 ;
-  
-  arg1 = (StringMgr *)jarg1; 
+  arg1 = (Classifier *)jarg1; 
   delete arg1;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CreateInstance() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_GetInstance() {
   void * jresult ;
-  StringMgr *result = 0 ;
+  Classifier *result = 0 ;
   
-  result = (StringMgr *)CreateInstance();
+  result = (Classifier *)GetInstance();
   jresult = (void *)result; 
   return jresult;
 }
